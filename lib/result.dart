@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final String result;
-  final Function reset;
+  final Function _reset;
 
   String get resultText {
     return 'You have Done $result';
   }
 
-  Result(this.reset, {this.result});
+  Result(this._reset, {this.result});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class Result extends StatelessWidget {
             child: Text(
               'Restart Quiz',
             ),
-            onPressed: reset,
+            onPressed: _reset,
           )
         ],
       ),

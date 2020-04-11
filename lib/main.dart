@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
   static int _index = 0;
   static const _TEXT_RESULT = 'Thank You';
 
-  void handlerQuestionsAnswers() {
+  void _handlerQuestionsAnswers() {
     if (_index < _questionsAnswers.length) {
       setState(() {
         _index++;
@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-  void resetQuiz() {
+  void _resetQuiz() {
     setState(() {
       _index = 0;
     });
@@ -53,8 +53,8 @@ class _MyAppState extends State<MyApp> {
               ? Quiz(
                   question: _questionsAnswers[_index]['question'],
                   answers: _questionsAnswers[_index]['answers'],
-                  answerQuestion: handlerQuestionsAnswers)
-              : Result(resetQuiz, result: _TEXT_RESULT)),
+              answerQuestion: _handlerQuestionsAnswers)
+              : Result(_resetQuiz, result: _TEXT_RESULT)),
     );
   }
 }
