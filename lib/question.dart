@@ -13,7 +13,7 @@ class Question extends StatelessWidget {
       child: Text(
         '$question',
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 28),
+        style: TextStyle(fontSize: 28, fontFamily: 'jetbrains'),
       ),
     );
   }

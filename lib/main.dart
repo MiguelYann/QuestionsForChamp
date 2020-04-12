@@ -44,17 +44,22 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'jetbrains',),
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Process Learn'),
+            backgroundColor: Colors.deepPurpleAccent,
+            title: Text(
+              'Process Learn', style: TextStyle(fontFamily: 'jetbrains'),),
             centerTitle: true,
           ),
-          body: _index < _questionsAnswers.length
-              ? Quiz(
-                  question: _questionsAnswers[_index]['question'],
-                  answers: _questionsAnswers[_index]['answers'],
-              answerQuestion: _handlerQuestionsAnswers)
-              : Result(_resetQuiz, result: _TEXT_RESULT)),
+          body: Center(
+            child: _index < _questionsAnswers.length
+                ? Quiz(
+                question: _questionsAnswers[_index]['question'],
+                answers: _questionsAnswers[_index]['answers'],
+                answerQuestion: _handlerQuestionsAnswers)
+                : Result(_resetQuiz, result: _TEXT_RESULT),
+          )),
     );
   }
 }

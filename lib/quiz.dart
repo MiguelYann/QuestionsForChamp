@@ -16,9 +16,15 @@ class Quiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Question(question),
-        ...answers.map((answer) => Answer(answerQuestion, answer)).toList()
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            ...answers.map((answer) => Answer(answerQuestion, answer)).toList()
+          ],
+        )
       ],
     );
   }
